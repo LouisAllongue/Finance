@@ -1,23 +1,3 @@
-import fpdf
-from pygments import highlight
-from pygments.lexers import PythonLexer
-from pygments.formatters import ImageFormatter
-
-# Conversion de code source avec coloration syntaxique
-def python_to_pdf(file_path, output_path):
-    pdf = fpdf.FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    
-    with open(file_path, 'r') as file:
-        code = file.read()
-        highlighted_code = highlight(code, PythonLexer(), ImageFormatter())
-        pdf.multi_cell(0, 10, highlighted_code)
-
-
-
-
-
 import pandas as pd
 import numpy as np
 
